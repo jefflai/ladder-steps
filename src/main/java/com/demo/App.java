@@ -7,28 +7,28 @@ package com.demo;
  */
 public class App {
 
-	public static int countPossibilities(int ladderStepsCount) {
-		if (ladderStepsCount < 1) {
-			throw new IllegalArgumentException("ladderStepsCount must be a postive integer");
-		}
+    public static int countPossibilities(int ladderStepsCount) {
+        if (ladderStepsCount < 1) {
+            throw new IllegalArgumentException("ladderStepsCount must be a postive integer");
+        }
 
-		return countPossibilitiesHelper(ladderStepsCount, 1) + countPossibilitiesHelper(ladderStepsCount, 2)
-				+ countPossibilitiesHelper(ladderStepsCount, 3) + countPossibilitiesHelper(ladderStepsCount, 4);
-	}
+        return countPossibilitiesHelper(ladderStepsCount, 1) + countPossibilitiesHelper(ladderStepsCount, 2)
+                + countPossibilitiesHelper(ladderStepsCount, 3) + countPossibilitiesHelper(ladderStepsCount, 4);
+    }
 
-	public static int countPossibilitiesHelper(int ladderStepsRemaining, int stepSizeToTake) {
-		if (ladderStepsRemaining >= stepSizeToTake) {
-			ladderStepsRemaining -= stepSizeToTake;
-		} else {
-			return 0;
-		}
+    public static int countPossibilitiesHelper(int ladderStepsRemaining, int stepSizeToTake) {
+        if (ladderStepsRemaining >= stepSizeToTake) {
+            ladderStepsRemaining -= stepSizeToTake;
+        } else {
+            return 0;
+        }
 
-		if (ladderStepsRemaining == 0) {
-			return 1;
-		}
+        if (ladderStepsRemaining == 0) {
+            return 1;
+        }
 
-		return countPossibilitiesHelper(ladderStepsRemaining, 1) + countPossibilitiesHelper(ladderStepsRemaining, 2)
-				+ countPossibilitiesHelper(ladderStepsRemaining, 3) + countPossibilitiesHelper(ladderStepsRemaining, 4);
-	}
+        return countPossibilitiesHelper(ladderStepsRemaining, 1) + countPossibilitiesHelper(ladderStepsRemaining, 2)
+                + countPossibilitiesHelper(ladderStepsRemaining, 3) + countPossibilitiesHelper(ladderStepsRemaining, 4);
+    }
 
 }
